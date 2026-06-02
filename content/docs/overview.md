@@ -3772,6 +3772,7 @@ Attributes modify the compilation details or behaviour of declarations.
 * [`@(link_name=<string>)`](#link_namestring)
 * [`@(link_prefix=<string>)`](#link_prefixstring)
 * [`@(link_suffix=<string>)`](#link_suffixstring)
+* [`@(link_section=<string>)`](#link_sectionstring)
 * [`@(linkage=<string>)`](#linkagestring)
 * [`@(no_instrumentation=<boolean?>)`](#no_instrumentationboolean)
 * [`@(no_sanitize_address)`](#no_sanitize_address)
@@ -3983,6 +3984,15 @@ Specify the link section for a global variable.
 ```odin
 @(link_section=".foo")
 my_global: i32
+```
+
+Specify the link section for a procedure.
+
+```odin
+@(link_section=".bar")
+my_procedure :: proc "c" () -> i32 {
+	return 1337
+}
 ```
 
 #### `@(link_suffix=<string>)`
